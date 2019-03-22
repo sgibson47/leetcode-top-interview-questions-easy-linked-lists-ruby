@@ -13,3 +13,9 @@ def make_linked_list(array)
   end
   first_node
 end
+
+def delete_node(node)
+  node.val = node.next.val
+  node.next = node.next.next
+  nil
+end
