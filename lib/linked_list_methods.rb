@@ -2,11 +2,14 @@ require './linked_list_classes'
 
 def make_linked_list(array)
   i = 0 
-  last_node = nil
+  previous_node = nil
+  first_node = nil
   while i < array.length
     new_node = ListNode.new(array[i])
-    new_node.next = last_node
-    last_node = new_node
+    first_node = new_node if i == 0
+    previous_node.next = new_node if !!previous_node
+    previous_node = new_node
     i++
   end
+  first_node
 end
