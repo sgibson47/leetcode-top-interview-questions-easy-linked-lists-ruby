@@ -16,3 +16,17 @@ describe "#make_linked_list" do
     end
   end
 end
+
+
+describe "#delete_node" do 
+  describe "deletes node from an array" do
+    array = [4,5,1,9]
+    node_1 = make_linked_list(array)
+    node_to_go = node_1.next
+    
+    it "after deletion, the previous node point to the subsequent" do 
+      delete_node(node_to_go)
+      expect(node_1.next.val).to eq(1)
+    end
+  end
+end
