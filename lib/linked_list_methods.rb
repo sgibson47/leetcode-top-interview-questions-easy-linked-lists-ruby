@@ -1,4 +1,4 @@
-require './linked_list_classes'
+require 'linked_list_classes.rb'
 
 def make_linked_list(array)
   i = 0 
@@ -9,7 +9,7 @@ def make_linked_list(array)
     first_node = new_node if i == 0
     previous_node.next = new_node if !!previous_node
     previous_node = new_node
-    i++
+    i += 1
   end
   first_node
 end
