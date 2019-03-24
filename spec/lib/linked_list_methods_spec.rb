@@ -30,3 +30,20 @@ describe "#delete_node" do
     end
   end
 end
+
+
+describe "#remove_nth_from_end" do 
+  describe "deletes nth node from the end of linked list" do
+    array = [1,2,3,4,5]
+    head = make_linked_list(array)
+    n = 2
+    
+    it "after deletion, the previous node point to the subsequent" do 
+      remove_nth_from_end(head, n)
+      expect(head.val).to eq(1)
+      expect(head.next.val).to eq(2)
+      expect(head.next.next.val).to eq(3)
+      expect(head.next.next.next.val).to eq(5)
+    end
+  end
+end
