@@ -19,3 +19,26 @@ def delete_node(node)
   node.next = node.next.next
   nil
 end
+
+def remove_nth_from_end(head, n)
+  # determine the length of the list
+  i = 1
+  current = head
+  while current.next
+    current = current.next
+    i +=1
+  end
+  
+  # determine which listnode should be removed
+  # i - n = node_to_go
+  node = head
+
+  (i-n).times do
+    node = node.next
+  end
+
+  # remove the node
+  node.val = node.next.val
+  node.next = node.next.next
+  nil
+end
