@@ -69,3 +69,17 @@ describe "#remove_nth_from_end" do
     end
   end
 end
+
+describe "#reverse_linked_list" do 
+  describe "Example 1" do
+    array = [1,2,3,4,5]
+    head = make_linked_list(array)
+    
+    it "deletes nth node from the end of linked list" do 
+      reverse_linked_list(head)
+      expect(head.val).to eq(5)
+      expect(head.next.val).to eq(4)
+      expect(head.next.next.val).to eq(3)
+    end
+  end
+end
