@@ -51,6 +51,7 @@ def remove_nth_from_end(head, n)
 end
 
 def reverse_list(head)
+  return head unless head
   prev = nil
   temp = nil
   current = head
