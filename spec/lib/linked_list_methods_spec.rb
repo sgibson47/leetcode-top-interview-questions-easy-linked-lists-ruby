@@ -57,4 +57,15 @@ describe "#remove_nth_from_end" do
       expect(head.val).to eq(nil)
     end
   end
+
+  describe "Example 2" do
+    array = [1, 2]
+    head = make_linked_list(array)
+    n = 1
+    
+    it "deletes nth node from the end of linked list" do 
+      remove_nth_from_end(head, n)
+      expect(head.next).to eq(nil)
+    end
+  end
 end
