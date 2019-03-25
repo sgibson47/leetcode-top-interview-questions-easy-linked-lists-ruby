@@ -32,8 +32,10 @@ def remove_nth_from_end(head, n)
   # determine which listnode should be removed
   # i - n = node_to_go
   node = head
+  prev = nil
 
   (i-n).times do
+    prev = node
     node = node.next
   end
 
@@ -41,7 +43,9 @@ def remove_nth_from_end(head, n)
   if node.next
     node.val = node.next.val
     node.next = node.next.next
-  else
+  elsif !node.next && prev # no next but yes node before one to remove
+    prev.next = nil
+  else # no next b/c there was only one node
     node.val = nil
   end
   nil
