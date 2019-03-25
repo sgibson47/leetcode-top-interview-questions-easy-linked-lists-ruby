@@ -80,4 +80,14 @@ describe "#reverse_list" do
       expect(head.next).to eq(nil)
     end
   end
+
+  describe "Example 2" do
+    array = []
+    head = make_linked_list(array)
+    
+    it "deletes nth node from the end of linked list" do 
+      reverse_list(head)
+      expect(head).to eq(nil)
+    end
+  end
 end
