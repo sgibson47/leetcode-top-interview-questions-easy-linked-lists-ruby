@@ -54,7 +54,7 @@ describe "#remove_nth_from_end" do
     
     it "deletes nth node from the end of linked list" do 
       remove_nth_from_end(head, n)
-      expect(head).to eq(nil)
+      expect(head.val).to eq(nil)
     end
   end
 end

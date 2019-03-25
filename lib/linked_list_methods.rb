@@ -38,7 +38,11 @@ def remove_nth_from_end(head, n)
   end
 
   # remove the node
-  node.val = node.next.val
-  node.next = node.next.next
+  if node.next
+    node.val = node.next.val
+    node.next = node.next.next
+  else
+    node.val = nil
+  end
   nil
 end
