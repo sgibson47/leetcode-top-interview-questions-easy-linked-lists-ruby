@@ -61,5 +61,6 @@ def reverse_list(head)
       prev = current
       current = temp
   end
+  current.next = prev
   nil
 end
