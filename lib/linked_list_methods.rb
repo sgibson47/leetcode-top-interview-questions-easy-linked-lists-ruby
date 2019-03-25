@@ -30,7 +30,6 @@ def remove_nth_from_end(head, n)
   end
   
   # determine which listnode should be removed
-  # i - n = node_to_go
   node = head
   prev = nil
 
@@ -43,10 +42,23 @@ def remove_nth_from_end(head, n)
   if node.next
     node.val = node.next.val
     node.next = node.next.next
-  elsif !node.next && prev # no next but yes node before one to remove
+  elsif !node.next && prev # remove last, but not only
     prev.next = nil
-  else # no next b/c there was only one node
+  else # remove only node
     node.val = nil
   end
   nil
+end
+
+def reverse_list(head)
+  prev = nil
+  temp = nil
+  current = head
+  while current.next
+      temp = current.next
+      current.next = prev
+      prev = current
+      current = temp
+  end
+  current.next = prev
 end

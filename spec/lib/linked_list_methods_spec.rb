@@ -77,9 +77,7 @@ describe "#reverse_list" do
     
     it "deletes nth node from the end of linked list" do 
       reverse_list(head)
-      expect(head.val).to eq(5)
-      expect(head.next.val).to eq(4)
-      expect(head.next.next.val).to eq(3)
+      expect(head.next).to eq(nil)
     end
   end
 end
