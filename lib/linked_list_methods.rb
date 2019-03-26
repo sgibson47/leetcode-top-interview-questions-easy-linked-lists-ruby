@@ -66,5 +66,25 @@ def reverse_list(head)
 end
 
 def merge_two_lists(l1, l2)
-    
+  new_list_base = ListNode.new(0)
+  current = new_list_base
+
+  while l1 != nil && l2 != nil
+    if l1.val < l2.val
+      current.next  = l1
+      l1 = l1.next
+    else
+      current.next = l2
+      l2 = l2.next
+    end
+    current = current.next
+  end
+
+  if l1 != nil
+    current.next = l1
+  else 
+    current.next = l2
+  end
+
+  new_list_base.next
 end
