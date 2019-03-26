@@ -136,7 +136,7 @@ describe "#has_cycle" do
     head = make_linked_list(array)
     head.next.next.next.next = head.next
     
-    it "checks if list values form a palindrome" do 
+    it "checks the list contains a cycle" do 
       expect(has_cycle(head)).to eq(true)
     end
   end
@@ -146,7 +146,7 @@ describe "#has_cycle" do
     head = make_linked_list(array)
     head.next.next = head
     
-    it "checks if list values form a palindrome" do 
+    it "checks the list contains a cycle" do 
       expect(has_cycle(head)).to eq(true)
     end
   end
@@ -155,7 +155,7 @@ describe "#has_cycle" do
     array = [1]
     head = make_linked_list(array)
     
-    it "checks if list values form a palindrome" do 
+    it "checks the list contains a cycle" do 
       expect(has_cycle(head)).to eq(false)
     end
   end
