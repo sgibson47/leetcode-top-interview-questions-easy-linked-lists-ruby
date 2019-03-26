@@ -88,3 +88,22 @@ def merge_two_lists(l1, l2)
 
   new_list_base.next
 end
+
+def is_palindrome(head)
+  curr = head
+  values = []
+  while curr != nil
+    values.push(curr.val)
+    curr = curr.next
+  end
+  i = 0 
+  j = values.length - 1
+  while i < j
+    if values[i] != values[j]
+      return false
+    end
+    i += 1
+    j -= 1
+  end
+  true
+end
