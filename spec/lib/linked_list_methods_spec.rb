@@ -91,3 +91,21 @@ describe "#reverse_list" do
     end
   end
 end
+
+describe "#merge_two_lists" do 
+  describe "Example 1" do
+    array1 = [1,2,4]
+    head1 = make_linked_list(array1)
+    array2 = [1,3,4]
+    head2 = make_linked_list(array2)
+    
+    it "merges the two lists" do 
+      merge_two_lists(head1, head2)
+      expect(head1.next.val).to eq(1)
+      expect(head1.next.next.val).to eq(2)
+      expect(head1.next.next.next.val).to eq(3)
+      expect(head1.next.next.next.next.val).to eq(4)
+      expect(head1.next.next.next.next.next.val).to eq(4)
+    end
+  end
+end
