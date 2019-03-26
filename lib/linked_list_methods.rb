@@ -64,3 +64,7 @@ def reverse_list(head)
   current.next = prev
   nil
 end
+
+def merge_two_lists(l1, l2)
+    
+end

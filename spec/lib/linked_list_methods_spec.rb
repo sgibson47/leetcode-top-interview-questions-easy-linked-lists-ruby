@@ -100,12 +100,12 @@ describe "#merge_two_lists" do
     head2 = make_linked_list(array2)
     
     it "merges the two lists" do 
-      merge_two_lists(head1, head2)
-      expect(head1.next.val).to eq(1)
-      expect(head1.next.next.val).to eq(2)
-      expect(head1.next.next.next.val).to eq(3)
-      expect(head1.next.next.next.next.val).to eq(4)
-      expect(head1.next.next.next.next.next.val).to eq(4)
+      new_list_head = merge_two_lists(head1, head2)
+      expect(new_list_head.val).to eq(1)
+      expect(new_list_head.next.next.val).to eq(2)
+      expect(new_list_head.next.next.next.val).to eq(3)
+      expect(new_list_head.next.next.next.next.val).to eq(4)
+      expect(new_list_head.next.next.next.next.next.val).to eq(4)
     end
   end
 end
