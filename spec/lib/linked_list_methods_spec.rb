@@ -109,3 +109,23 @@ describe "#merge_two_lists" do
     end
   end
 end
+
+describe "#is_palindrome" do 
+  describe "Example 1" do
+    array = [1,2]
+    head = make_linked_list(array)
+    
+    it "checks if list values form a palindrome" do 
+      expect(is_palindrome(head)).to eq(false)
+    end
+  end
+
+  describe "Example 2" do
+    array = [1,2,2,1]
+    head = make_linked_list(array)
+    
+    it "checks if list values form a palindrome" do 
+      expect(is_palindrome(head)).to eq(true)
+    end
+  end
+end
