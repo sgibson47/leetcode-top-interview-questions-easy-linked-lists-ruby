@@ -129,3 +129,34 @@ describe "#is_palindrome" do
     end
   end
 end
+
+describe "#has_cycle" do 
+  describe "Example 1" do
+    array = [3,2,0,-4]
+    head = make_linked_list(array)
+    head.next.next.next.next = head.next
+    
+    it "checks if list values form a palindrome" do 
+      expect(has_cycle(head)).to eq(true)
+    end
+  end
+
+  describe "Example 2" do
+    array = [1,2]
+    head = make_linked_list(array)
+    head.next.next = head
+    
+    it "checks if list values form a palindrome" do 
+      expect(has_cycle(head)).to eq(true)
+    end
+  end
+
+  describe "Example 1" do
+    array = [1]
+    head = make_linked_list(array)
+    
+    it "checks if list values form a palindrome" do 
+      expect(has_cycle(head)).to eq(false)
+    end
+  end
+end
