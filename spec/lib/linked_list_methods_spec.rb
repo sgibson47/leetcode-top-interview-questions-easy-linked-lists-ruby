@@ -151,7 +151,7 @@ describe "#has_cycle" do
     end
   end
 
-  describe "Example 1" do
+  describe "Example 3" do
     array = [1]
     head = make_linked_list(array)
     
