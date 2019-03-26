@@ -107,3 +107,32 @@ def is_palindrome(head)
   end
   true
 end
+
+def has_cycle(head)
+  # if the list is empty or only has one node pointing to nil
+  # there's no cycle!
+  return false if !head || !head.next 
+  
+  # start two pointers
+  slow = head
+  fast = head
+
+  # so long as there is a slow & a fast & fast isn't pointing to nil
+  while fast && fast.next && slow
+    # move the slow pointer up one
+    slow = slow.next
+    # move th efast pointer up two
+    fast = fast.next.next
+
+    # if the fast pointer catches up to the slow pointer
+    # we know the fast pointer must have gone through a cycle
+    # in order to lap/catch up to the slow pointer 
+    if slow == fast
+      return true
+    end
+  end
+  # if the fast pointer represents a node that points to nil
+  # we've hit the end of the list and it doesn't loop back on itself
+  # i.e. there is no cycle, the while loop will break 
+  false
+end
